@@ -4,14 +4,19 @@
 }
 
 body {
-    background-color:  hsl(185, 41%, 84%);
+    background: #D6BCFF;
 }
 
 
 .header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-block: 50px;
+    line-height: 2rem;
+   letter-spacing: 0.2rem;
+   color:#6F3CFF
 }
 
 .mainContainer {
@@ -26,7 +31,7 @@ body {
 .label {
     font-family: 'Space Mono',sans-serif;
     font-size: 14px;
-    color : hsl(186, 14%, 43%);
+    color : #9C60FF;
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -42,12 +47,12 @@ body {
     width : 300px;
     border : none;
     border-radius: 5px;
-    background-color : hsl(189, 41%, 97%);
+    background: rgba(182, 172, 196, 0.53);
     text-align: right;
     cursor: pointer;
     font-family: 'Space Mono',sans-serif;
     font-weight: 700;
-    color: hsl(183, 100%, 15%);
+    color: #9C60FF;
     font-size: 18px;
 }
 
@@ -77,7 +82,7 @@ input[type=number] {
     padding : 10px;
     border: none;
     border-radius: 5px;
-    background-color : hsl(183, 100%, 15%);
+    background-color : #9C60FF;;
     color : #fff;
     font-size: 20px;
     font-family: 'Space Mono',sans-serif;
@@ -87,8 +92,7 @@ input[type=number] {
 
 
 .btnContainer >button.active {
-    background-color: hsl(185, 41%, 84%);
-    color : hsl(183, 100%, 15%);
+    background-color : #9C60FF;;
 }
 
 
@@ -110,8 +114,7 @@ input[type=number] {
     width : 300px;
     border : none;
     border-radius: 5px;
-    background-color : hsl(189, 41%, 97%);
-    text-align: right;
+    background: rgba(182, 172, 196, 0.53);    text-align: right;
     cursor: pointer;
     font-family: 'Space Mono',sans-serif;
     font-weight: 700;
@@ -129,7 +132,7 @@ input[type=number] {
 }
 
 .bottomSection{
-    background-color: hsl(183, 100%, 15%);
+    background: #9C60FF;  
     border: none;
     border-radius: 20px;
     padding-block : 50px 20px;
@@ -157,7 +160,7 @@ input[type=number] {
 .desc > div {
     font-size: 30px;
     font-family: 'Space Mono',sans-serif;
-    color : hsl(184, 14%, 56%);
+    color: #C39FFF;
     font-weight: 700;
 }
 
@@ -165,9 +168,9 @@ input[type=number] {
     padding : 15px;
     border: none;
     border-radius: 5px;
-    background-color: hsl(184, 14%, 56%);
+    background: #C39FFF;
     font-size: 16px;
-    color : hsl(183, 100%, 15%);
+    color: #9C60FF;
     font-weight: 700;
     width : 280px;
     cursor: pointer;

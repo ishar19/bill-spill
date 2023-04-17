@@ -25,15 +25,6 @@ customTip.addEventListener('input',tipCustomVal);
 people.addEventListener('input',setPeopleVal)
 reset.addEventListener('click',handleReset);
 
-
-
-// to get the value for each button
-// store the value inside a global variable
-// perform foreach to respective target, ie button.
-// make a function, inside the function, do another foreach;
-// make a conditional that states. if the clicked button is the same with the innerHTML of a button, then rewrite the value the global variable
-
-
 button.forEach(btn => {
     btn.addEventListener('click',handleClick)
 });
@@ -46,10 +37,6 @@ function handleClick(event){
         if(event.target.innerHTML === btn.innerHTML){
             btn.classList.add('active');
             tipVal = parseFloat(btn.innerHTML)/100
-            // console.log(buttonVal)
-            // making the innerHTML of a button to be a string,
-            // then divide by 100 to make a percent because parsefloat cannot read % in integer.
-            console.log(tipVal)
         }
     })
     customTip.value=''
@@ -65,7 +52,6 @@ function tipCustomVal(){
          calculate();
          
     }
-    console.log(tipVal)
 }
 
 function setPeopleVal(){
@@ -76,7 +62,6 @@ function setPeopleVal(){
             error.innerHTML = ''
         },2000)
     }
-    console.log(peopleVal)
     calculate() 
 }
 
