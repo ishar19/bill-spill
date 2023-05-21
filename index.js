@@ -7,18 +7,28 @@ const totalVal = document.querySelectorAll('.tipValue')
 const reset = document.querySelector('.reset')
 const calc = document.getElementById("calc")
 let billVal = 0;
-let peopleVal = 1;
-let tipVal = 0.15;
+let peopleVal = 0;
+let tipVal = 0;
 
 input.addEventListener('input',validateBill);
+
+function validateInput(){
+    if(billVal>0&&peopleVal>0&&tipVal>0){
+        calc.classList.add('active')
+        return true
+    }
+    else{
+        calc.classList.remove('active')
+        return false
+    }
+}
 
 function validateBill(){
     if(input.value.includes(',')){
         input.value.replace(',','.')
     }
     billVal = parseFloat(input.value);
-    calculate()
-    // console.log(billVal)
+    validateInput()
 }
 
 calc.addEventListener('click', calculate)
@@ -41,6 +51,7 @@ function handleClick(event){
         }
     })
     customTip.value=''
+    validateInput()
 }
 
 function tipCustomVal(){
@@ -50,6 +61,7 @@ function tipCustomVal(){
     })
     if(customTip.value !== 0){         
     }
+    validateInput()
 }
 
 function setPeopleVal(){
@@ -60,6 +72,7 @@ function setPeopleVal(){
             error.innerHTML = ''
         },2000)
     }
+    validateInput()
 }
 
 function calculate() {
@@ -71,7 +84,6 @@ function calculate() {
         totalVal[1].innerHTML = '$' + totalAmount.toFixed(2);
 
         reset.classList.add("active")
-        console.log(reset)
     }
 }
 
@@ -84,4 +96,5 @@ function handleReset(){
     setPeopleVal()
 
     reset.classList.remove("active")
+    validateInput()
 }
