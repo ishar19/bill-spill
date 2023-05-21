@@ -5,7 +5,7 @@ const error = document.getElementById('error')
 const people = document.getElementById('people')
 const totalVal = document.querySelectorAll('.tipValue')
 const reset = document.querySelector('.reset')
-
+const calc = document.getElementById("calc")
 let billVal = 0;
 let peopleVal = 1;
 let tipVal = 0.15;
@@ -18,9 +18,10 @@ function validateBill(){
     }
     billVal = parseFloat(input.value);
     calculate()
-    console.log(billVal)
+    // console.log(billVal)
 }
 
+calc.addEventListener('click', calculate)
 customTip.addEventListener('input',tipCustomVal);
 people.addEventListener('input',setPeopleVal)
 reset.addEventListener('click',handleReset);
@@ -40,7 +41,6 @@ function handleClick(event){
         }
     })
     customTip.value=''
-    calculate()
 }
 
 function tipCustomVal(){
@@ -48,9 +48,7 @@ function tipCustomVal(){
     button.forEach(btn => {
         btn.classList.remove('active');
     })
-    if(customTip.value !== 0){
-         calculate();
-         
+    if(customTip.value !== 0){         
     }
 }
 
@@ -62,7 +60,6 @@ function setPeopleVal(){
             error.innerHTML = ''
         },2000)
     }
-    calculate() 
 }
 
 function calculate() {
@@ -72,6 +69,9 @@ function calculate() {
 
         totalVal[0].innerHTML = '$' + tip.toFixed(2);
         totalVal[1].innerHTML = '$' + totalAmount.toFixed(2);
+
+        reset.classList.add("active")
+        console.log(reset)
     }
 }
 
@@ -82,4 +82,6 @@ function handleReset(){
     button[2].click();
     people.value = 1;
     setPeopleVal()
+
+    reset.classList.remove("active")
 }
